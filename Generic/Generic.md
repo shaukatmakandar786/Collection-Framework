@@ -50,3 +50,24 @@ type parameter can be represents of reference types, not primitive types(like in
             10
             20
             30
+### same program using generic method:
+
+                        // in this situation we have same function logic but we have different parameters so we are creating here Only 1 generic method
+                        // at this situation we don't need to overload too many method if we have same logic but argument is different
+
+                        public class Main{
+                            public <E> void printArrays(E s[])
+                            {
+                                for (E p:s) {
+                                    System.out.println(p);
+                                }
+                            }
+                            public static void main(String[] args) {
+
+                                Main m1=new Main();
+                                String s1[]={"india","pakistan","chaina"};
+                                m1.printArrays(s1);
+                                Integer i1[]={10,20,30};
+                                m1.printArrays(i1);
+                            }
+                        }
