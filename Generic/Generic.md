@@ -13,3 +13,40 @@ a set of related methods or, with a single classes declaration, as set of relate
 ### important rule :
 
 type parameter can be represents of reference types, not primitive types(like int, double, char). 
+
+            // in this situation we have same function logic but we have different parameters so we are creating here two functions
+            //so we can solve this problem by using generic methods
+
+            public class Main{
+
+                public void printArrays(String s[])
+                {
+                    for (int i=0;i<s.length;i++)
+                    {
+                        System.out.println(s[i]);
+                    }
+                }
+                public void printArrays(Integer s[])
+                {
+                    for (int i=0;i<s.length;i++)
+                    {
+                        System.out.println(s[i]);
+                    }
+                }
+                public static void main(String[] args) {
+
+                    Main m1=new Main();
+                    String s1[]={"india","pakistan","chaina"};
+                    m1.printArrays(s1);
+                    Integer i1[]={10,20,30};
+                    m1.printArrays(i1);
+                }
+            }
+            
+            
+            india
+            pakistan
+            chaina
+            10
+            20
+            30
