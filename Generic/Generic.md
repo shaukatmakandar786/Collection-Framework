@@ -71,3 +71,66 @@ type parameter can be represents of reference types, not primitive types(like in
                     m1.printArrays(i1);
                 }
             }
+
+## Generic Class :
+
+A Generic class declaration looks like a non-generic class declaration, except that the class name is followed by a type parameter section.
+
+As with generic methods the type parameter section of a generic class can have one or more type parameters seprated by commas.
+
+            class MyData
+            {
+                Integer i;
+                void setI(Integer i1)
+                {
+                    i=i1;
+                }
+                Integer getI()
+                {
+                    return i;
+                }
+            }
+            public class Main{
+                public static void main(String[] args) {
+
+                    MyData m=new MyData();
+                    m.setI(10);
+                    System.out.println(m.getI());
+
+            //        we can't do like this
+            //        m.setI("india");
+            //        System.out.println(m.getI());
+                }
+            }
+            
+            10
+       
+### same program using generic class :
+
+            class MyData<T>
+            {
+                T i;
+                void setI(T i1)
+                {
+                    i=i1;
+                }
+                T getI()
+                {
+                    return i;
+                }
+            }
+            public class Main{
+                public static void main(String[] args) {
+
+                    MyData<Integer> m1=new MyData<Integer>();
+                    m1.setI(10);
+                    System.out.println(m1.getI());
+
+                    MyData<String> m2=new MyData<String>();
+                    m2.setI("India is Best");
+                    System.out.println(m2.getI());
+                }
+            }
+
+            10
+            India is Best
